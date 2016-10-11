@@ -18,6 +18,7 @@ ingredients = {
  
 def askquestions():
     """asks what type of drink a customer likes"""
+    print("Yaarrr matey! Welcome to thee barrr!")
     likes = {}
     for flavor in questions:
         answer = input(questions[flavor])
@@ -53,8 +54,9 @@ if __name__ == '__main__':
     while drinking:
         another = input("Would you like another drink? ")
         if another == "yes" or another == "y":
-            askquestions()
-            createdrink(likes)
+            likes = askquestions()
+            drink = createdrink(likes)
+            print("Ok, I think you will enjoy this. In this drink, I used a {}".format(drink))
             print("I call this drink the...") 
             cocktailname()
         else:
